@@ -1,0 +1,7 @@
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/adwaita-test.dir
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/edit_cache.dir
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/rebuild_cache.dir
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/list_install_components.dir
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/install.dir
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/install/local.dir
+/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/install/strip.dir
