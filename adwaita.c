@@ -1,14 +1,13 @@
 #include <adwaita.h>
+#include <stdio.h>
+#include "glib-object.h"
+#include "glib.h"
 #include "gtk/gtk.h"
 #include "window.h"
 
-/* Struct of Widgets */
-typedef struct {
-    GtkWidget *window;
-    GtkWidget *grid;
-    GtkWidget *label;
-    GtkWidget *button;
-} WidgetData;
+static void btn_click(GtkButton *button) {
+    g_print("Button click!!!\n");
+};
 
 /* adw_application Callback Function */
 static void activate_cb (GtkApplication *app) {
@@ -24,8 +23,8 @@ static void activate_cb (GtkApplication *app) {
     // GtkGrid
     data->grid = gtk_grid_new();
     gtk_window_set_child(GTK_WINDOW(data->window), data->grid);
-    // gtk_grid_set_row_homogeneous(GTK_GRID(data->grid), TRUE);
-    // gtk_grid_set_column_homogeneous(GTK_GRID(data->grid), TRUE);
+    gtk_grid_set_row_homogeneous(GTK_GRID(data->grid), TRUE);
+    gtk_grid_set_column_homogeneous(GTK_GRID(data->grid), TRUE);
     gtk_grid_set_row_spacing(GTK_GRID(data->grid), 30);
     gtk_grid_set_column_spacing(GTK_GRID(data->grid), 30);
     gtk_widget_set_margin_start(GTK_WIDGET(data->grid), 50);
@@ -41,6 +40,7 @@ static void activate_cb (GtkApplication *app) {
     data->button = gtk_button_new_with_label("_Button");
     gtk_button_set_use_underline(GTK_BUTTON(data->button), TRUE);
     gtk_widget_set_name(data->button, "button");
+    g_signal_connect(data->button, "clicked", G_CALLBACK(btn_click), NULL);
 
     // Attach Widgets children to GtkGrid
     gtk_grid_attach(GTK_GRID(data->grid), data->label, 0, 0, 1, 1); // Label at column 0, row 0
