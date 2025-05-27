@@ -1,3 +1,0 @@
-/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/adwaita.dir
-/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/edit_cache.dir
-/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles/rebuild_cache.dir
