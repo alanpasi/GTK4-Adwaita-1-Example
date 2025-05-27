@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.31)
 project(Adwaita VERSION 1.0 LANGUAGES C) # Nome do projeto
 
 # Define o nome do executável explicitamente
-set(EXECUTABLE_NAME "adwaita-test") # Nome do executável
+set(EXECUTABLE_NAME "adwaita") # Nome do executável
 
 set(CMAKE_C_STANDARD 23)
 set(CMAKE_C_STANDARD_REQUIRED ON)
@@ -24,12 +24,15 @@ if(NOT MATH_LIB)
     message(FATAL_ERROR "Biblioteca math não encontrada!")
 endif()
 
+# Define onde estão os arquivos de cabeçalho
+include_directories(include)
+
 # Adiciona o executável usando o nome customizado
-add_executable(${EXECUTABLE_NAME} adwaita-test.c)
+add_executable(${EXECUTABLE_NAME}
+                adwaita.c
+                src/window.c
+)
 
 # Linka as bibliotecas e inclui diretórios para o TARGET específico
 target_include_directories(${EXECUTABLE_NAME} PRIVATE ${ADWAITA_INCLUDE_DIRS})
 target_link_libraries(${EXECUTABLE_NAME} PRIVATE ${ADWAITA_LIBRARIES} ${MATH_LIB})
-
-# Opcional: Regras de instalação (se estiver usando)
-install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)

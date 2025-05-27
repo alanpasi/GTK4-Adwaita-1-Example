@@ -85,51 +85,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-.PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles /home/alanpasi/dev/GTK/GTK4/adwaita/build//CMakeFiles/progress.marks
@@ -169,41 +124,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named adwaita-test
+# Target rules for targets named adwaita
 
 # Build rule for target.
-adwaita-test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adwaita-test
-.PHONY : adwaita-test
+adwaita: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 adwaita
+.PHONY : adwaita
 
 # fast build rule for target.
-adwaita-test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/build
-.PHONY : adwaita-test/fast
+adwaita/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/build
+.PHONY : adwaita/fast
 
-adwaita-test.o: adwaita-test.c.o
-.PHONY : adwaita-test.o
+adwaita.o: adwaita.c.o
+.PHONY : adwaita.o
 
 # target to build an object file
-adwaita-test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/adwaita-test.c.o
-.PHONY : adwaita-test.c.o
+adwaita.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/adwaita.c.o
+.PHONY : adwaita.c.o
 
-adwaita-test.i: adwaita-test.c.i
-.PHONY : adwaita-test.i
+adwaita.i: adwaita.c.i
+.PHONY : adwaita.i
 
 # target to preprocess a source file
-adwaita-test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/adwaita-test.c.i
-.PHONY : adwaita-test.c.i
+adwaita.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/adwaita.c.i
+.PHONY : adwaita.c.i
 
-adwaita-test.s: adwaita-test.c.s
-.PHONY : adwaita-test.s
+adwaita.s: adwaita.c.s
+.PHONY : adwaita.s
 
 # target to generate assembly for a file
-adwaita-test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/adwaita-test.c.s
-.PHONY : adwaita-test.c.s
+adwaita.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/adwaita.c.s
+.PHONY : adwaita.c.s
+
+src/window.o: src/window.c.o
+.PHONY : src/window.o
+
+# target to build an object file
+src/window.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/src/window.c.o
+.PHONY : src/window.c.o
+
+src/window.i: src/window.c.i
+.PHONY : src/window.i
+
+# target to preprocess a source file
+src/window.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/src/window.c.i
+.PHONY : src/window.c.i
+
+src/window.s: src/window.c.s
+.PHONY : src/window.s
+
+# target to generate assembly for a file
+src/window.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/src/window.c.s
+.PHONY : src/window.c.s
 
 # Help Target
 help:
@@ -213,15 +192,14 @@ help:
 	@echo "... depend"
 	@echo "... codegen"
 	@echo "... edit_cache"
-	@echo "... install"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... adwaita-test"
-	@echo "... adwaita-test.o"
-	@echo "... adwaita-test.i"
-	@echo "... adwaita-test.s"
+	@echo "... adwaita"
+	@echo "... adwaita.o"
+	@echo "... adwaita.i"
+	@echo "... adwaita.s"
+	@echo "... src/window.o"
+	@echo "... src/window.i"
+	@echo "... src/window.s"
 .PHONY : help
 
 

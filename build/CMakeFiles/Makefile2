@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = /home/alanpasi/dev/GTK/GTK4/adwaita/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/adwaita-test.dir/all
+all: CMakeFiles/adwaita.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/adwaita-test.dir/codegen
+codegen: CMakeFiles/adwaita.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/adwaita-test.dir/clean
+clean: CMakeFiles/adwaita.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/adwaita-test.dir
+# Target rules for target CMakeFiles/adwaita.dir
 
 # All Build rule for target.
-CMakeFiles/adwaita-test.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles --progress-num=1,2 "Built target adwaita-test"
-.PHONY : CMakeFiles/adwaita-test.dir/all
+CMakeFiles/adwaita.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles --progress-num=1,2,3 "Built target adwaita"
+.PHONY : CMakeFiles/adwaita.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/adwaita-test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/adwaita-test.dir/all
+CMakeFiles/adwaita.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/adwaita.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles 0
-.PHONY : CMakeFiles/adwaita-test.dir/rule
+.PHONY : CMakeFiles/adwaita.dir/rule
 
 # Convenience name for target.
-adwaita-test: CMakeFiles/adwaita-test.dir/rule
-.PHONY : adwaita-test
+adwaita: CMakeFiles/adwaita.dir/rule
+.PHONY : adwaita
 
 # codegen rule for target.
-CMakeFiles/adwaita-test.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles --progress-num=1,2 "Finished codegen for target adwaita-test"
-.PHONY : CMakeFiles/adwaita-test.dir/codegen
+CMakeFiles/adwaita.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/alanpasi/dev/GTK/GTK4/adwaita/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target adwaita"
+.PHONY : CMakeFiles/adwaita.dir/codegen
 
 # clean rule for target.
-CMakeFiles/adwaita-test.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita-test.dir/build.make CMakeFiles/adwaita-test.dir/clean
-.PHONY : CMakeFiles/adwaita-test.dir/clean
+CMakeFiles/adwaita.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/adwaita.dir/build.make CMakeFiles/adwaita.dir/clean
+.PHONY : CMakeFiles/adwaita.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
