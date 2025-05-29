@@ -15,6 +15,7 @@ static void activate_cb (GtkApplication *app) {
     // builder = gtk_builder_new_from_file("ui/adwaita_window.ui");
     builder = gtk_builder_new_from_file("ui/window_adwaita.ui");
 
+    // Widgets styles
     load_css();
 
     // GtkWindow
