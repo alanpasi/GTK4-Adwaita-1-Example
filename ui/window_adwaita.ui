@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <!-- interface-name window_adwaita.ui -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.7"/>
+  <object class="AdwApplicationWindow" id="main_window">
+    <property name="content">
+      <object class="AdwToolbarView" id="atbv">
+        <property name="content">
+          <object class="GtkBox" id="main_box">
+            <property name="halign">center</property>
+            <property name="homogeneous">True</property>
+            <property name="orientation">vertical</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkLabel" id="label1">
+                <property name="label">Label1</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label2">
+                <property name="label">Label</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button">
+                <property name="label">Button</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+          </object>
+        </property>
+        <property name="vexpand">True</property>
+        <child type="top">
+          <object class="AdwHeaderBar" id="ahb">
+            <property name="title-widget">
+              <object class="GtkLabel" id="title-headerbar">
+                <property name="label">title-widget!!!</property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </object>
+</interface>

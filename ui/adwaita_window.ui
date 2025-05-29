@@ -1,15 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Created with Cambalache 0.96.1 -->
 <interface>
-  <!-- interface-name adwaita_window.ui -->
-  <requires lib="gtk" version="4.0"/>
-  <requires lib="libadwaita" version="1.0"/>
+  <!-- interface-name New XML Document.ui -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.7"/>
   <object class="AdwApplicationWindow" id="window">
-    <child type="titlebar">
-      <object class="AdwHeaderBar">
-        <child type="title">
-          <object class="GtkLabel">
-            <property name="label">sldkfjsdfs</property>
+    <property name="default-height">400</property>
+    <property name="default-width">600</property>
+    <property name="title">Minha Aplicação Adwaita</property>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkBox" id="box1">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="AdwHeaderBar" id="headerbar"/>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkBox" id="box2">
+            <property name="homogeneous">True</property>
+            <property name="orientation">vertical</property>
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkLabel" id="label">
+                <property name="halign">center</property>
+                <property name="label">Label</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton" id="button">
+                <property name="halign">center</property>
+                <property name="label">Button</property>
+                <property name="valign">center</property>
+              </object>
+            </child>
           </object>
         </child>
       </object>

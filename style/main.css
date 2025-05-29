@@ -1,9 +1,26 @@
-window {
-    background-color: dimgray;
+#window {
+    background-color: darkslategray;
 }
 #label {
     background-color: darkred;
+    border-radius: 50px;
+}
+#label:hover {
+    background-color: darkslategray;
+    color: yellow;
+    font-weight: bold;
 }
 #button {
-    color: darkblue;
+    color: red;
+    /* padding: 50px; */
+}
+#button:hover {
+    color: blue;
+}
+/* Para a HeaderBar específica com o ID "headerbar" */
+#title-headerbar {
+    /* background-color: white; */
+    color: white; /* Cor do texto dentro da HeaderBar */
+    border-radius: 50px;
+    font-weight: bold;
 }

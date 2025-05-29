@@ -5,6 +5,7 @@ typedef struct {
     GtkWidget *window;
     GtkWidget *grid;
     GtkWidget *label;
+    GtkWidget *lbl_headerbar_title;
     GtkWidget *button;
 } WidgetData;
 

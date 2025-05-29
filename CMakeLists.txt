@@ -18,12 +18,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(ADWAITA REQUIRED libadwaita-1)
 
-# Adiciona a biblioteca math (m)
-find_library(MATH_LIB m)
-if(NOT MATH_LIB)
-    message(FATAL_ERROR "Biblioteca math não encontrada!")
-endif()
-
 # Define onde estão os arquivos de cabeçalho
 include_directories(include)
 
@@ -35,4 +29,4 @@ add_executable(${EXECUTABLE_NAME}
 
 # Linka as bibliotecas e inclui diretórios para o TARGET específico
 target_include_directories(${EXECUTABLE_NAME} PRIVATE ${ADWAITA_INCLUDE_DIRS})
-target_link_libraries(${EXECUTABLE_NAME} PRIVATE ${ADWAITA_LIBRARIES} ${MATH_LIB})
+target_link_libraries(${EXECUTABLE_NAME} PRIVATE ${ADWAITA_LIBRARIES})

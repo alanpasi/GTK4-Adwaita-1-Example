@@ -1,7 +1,4 @@
 #include <adwaita.h>
-#include <stdio.h>
-#include "glib-object.h"
-#include "glib.h"
 #include "gtk/gtk.h"
 #include "window.h"
 
@@ -13,38 +10,29 @@ static void btn_click(GtkButton *button) {
 static void activate_cb (GtkApplication *app) {
     WidgetData *data= g_new0(WidgetData, 1);
 
+    GtkBuilder *builder;
+
+    // builder = gtk_builder_new_from_file("ui/adwaita_window.ui");
+    builder = gtk_builder_new_from_file("ui/window_adwaita.ui");
+
     load_css();
 
     // GtkWindow
-    data->window = gtk_application_window_new (app);
-    gtk_window_set_title (GTK_WINDOW (data->window), "Hello");
-    gtk_window_set_default_size (GTK_WINDOW (data->window), 400, 400);
-
-    // GtkGrid
-    data->grid = gtk_grid_new();
-    gtk_window_set_child(GTK_WINDOW(data->window), data->grid);
-    gtk_grid_set_row_homogeneous(GTK_GRID(data->grid), TRUE);
-    gtk_grid_set_column_homogeneous(GTK_GRID(data->grid), TRUE);
-    gtk_grid_set_row_spacing(GTK_GRID(data->grid), 30);
-    gtk_grid_set_column_spacing(GTK_GRID(data->grid), 30);
-    gtk_widget_set_margin_start(GTK_WIDGET(data->grid), 50);
-    gtk_widget_set_margin_end(GTK_WIDGET(data->grid), 50);
-    gtk_widget_set_margin_top(GTK_WIDGET(data->grid), 50);
-    gtk_widget_set_margin_bottom(GTK_WIDGET(data->grid), 50);
+    data->window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
+    gtk_window_set_application(GTK_WINDOW(data->window), app);
+    // gtk_window_set_title (GTK_WINDOW (data->window), "Adwaita - set_title");
+    gtk_window_set_default_size (GTK_WINDOW (data->window), 400, 700);
 
     // GtkLabel
-    data->label = gtk_label_new("Label1");
-    gtk_widget_set_name(data->label, "label");
+    data->lbl_headerbar_title = GTK_WIDGET(gtk_builder_get_object(builder, "title-headerbar"));
+    gtk_widget_set_name(data->lbl_headerbar_title, "title-headerbar");
+    gtk_label_set_label(GTK_LABEL(data->lbl_headerbar_title), "Título alterado!!!");
 
     // GtkButton
-    data->button = gtk_button_new_with_label("_Button");
-    gtk_button_set_use_underline(GTK_BUTTON(data->button), TRUE);
-    gtk_widget_set_name(data->button, "button");
-    g_signal_connect(data->button, "clicked", G_CALLBACK(btn_click), NULL);
-
-    // Attach Widgets children to GtkGrid
-    gtk_grid_attach(GTK_GRID(data->grid), data->label, 0, 0, 1, 1); // Label at column 0, row 0
-    gtk_grid_attach(GTK_GRID(data->grid), data->button, 0, 1, 1, 1); // Button at column 0, row 1
+    // data->button = gtk_button_new_with_label("_Button");
+    // gtk_button_set_use_underline(GTK_BUTTON(data->button), TRUE);
+    // gtk_widget_set_name(GTK_WIDGET(data->button), "button");
+    // g_signal_connect(data->button, "clicked", G_CALLBACK(btn_click), NULL);
 
     gtk_window_present (GTK_WINDOW (data->window));
 
