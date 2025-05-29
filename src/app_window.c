@@ -1,5 +1,5 @@
 #include <adwaita.h>
-#include "window.h"
+#include "app_window.h"
 
 void load_css(void) {
     GtkCssProvider *provider;

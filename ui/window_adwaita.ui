@@ -27,7 +27,8 @@
             </child>
             <child>
               <object class="GtkButton" id="button">
-                <property name="label">Button</property>
+                <property name="label">_Button</property>
+                <property name="use-underline">True</property>
                 <property name="valign">center</property>
               </object>
             </child>
@@ -35,7 +36,7 @@
         </property>
         <property name="vexpand">True</property>
         <child type="top">
-          <object class="AdwHeaderBar" id="ahb">
+          <object class="AdwHeaderBar" id="headerbar">
             <property name="title-widget">
               <object class="GtkLabel" id="title-headerbar">
                 <property name="label">title-widget!!!</property>

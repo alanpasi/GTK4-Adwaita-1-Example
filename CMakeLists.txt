@@ -24,7 +24,7 @@ include_directories(include)
 # Adiciona o executável usando o nome customizado
 add_executable(${EXECUTABLE_NAME}
                 adwaita.c
-                src/window.c
+                src/app_window.c
 )
 
 # Linka as bibliotecas e inclui diretórios para o TARGET específico

@@ -3,7 +3,7 @@
 /* Struct of Widgets */
 typedef struct {
     GtkWidget *window;
-    GtkWidget *grid;
+    GtkWidget *headerbar;
     GtkWidget *label;
     GtkWidget *lbl_headerbar_title;
     GtkWidget *button;

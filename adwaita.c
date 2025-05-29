@@ -1,6 +1,6 @@
 #include <adwaita.h>
+#include "app_window.h"
 #include "gtk/gtk.h"
-#include "window.h"
 
 static void btn_click(GtkButton *button) {
     g_print("Button click!!!\n");
@@ -21,18 +21,21 @@ static void activate_cb (GtkApplication *app) {
     data->window = GTK_WIDGET(gtk_builder_get_object(builder, "main_window"));
     gtk_window_set_application(GTK_WINDOW(data->window), app);
     // gtk_window_set_title (GTK_WINDOW (data->window), "Adwaita - set_title");
-    gtk_window_set_default_size (GTK_WINDOW (data->window), 400, 700);
+    gtk_window_set_default_size (GTK_WINDOW (data->window), 500, 700);
+
+    // AdwHeaderBar
+    data->headerbar = GTK_WIDGET(gtk_builder_get_object(builder, "headerbar"));
+    gtk_widget_set_name(data->headerbar, "headerbar");
 
     // GtkLabel
     data->lbl_headerbar_title = GTK_WIDGET(gtk_builder_get_object(builder, "title-headerbar"));
     gtk_widget_set_name(data->lbl_headerbar_title, "title-headerbar");
-    gtk_label_set_label(GTK_LABEL(data->lbl_headerbar_title), "Título alterado!!!");
+    gtk_label_set_label(GTK_LABEL(data->lbl_headerbar_title), "Adwaita Window Application Demo");
 
     // GtkButton
-    // data->button = gtk_button_new_with_label("_Button");
-    // gtk_button_set_use_underline(GTK_BUTTON(data->button), TRUE);
-    // gtk_widget_set_name(GTK_WIDGET(data->button), "button");
-    // g_signal_connect(data->button, "clicked", G_CALLBACK(btn_click), NULL);
+    data->button = GTK_WIDGET(gtk_builder_get_object(builder, "button"));
+    gtk_widget_set_name(data->button, "button");
+    g_signal_connect(data->button, "clicked", G_CALLBACK(btn_click), NULL);
 
     gtk_window_present (GTK_WINDOW (data->window));
 
