@@ -75,6 +75,8 @@
         </child>
         <child type="bottom">
           <object class="AdwViewSwitcher">
+            <property name="halign">center</property>
+            <property name="margin-bottom">10</property>
             <property name="stack">view_stack</property>
           </object>
         </child>
