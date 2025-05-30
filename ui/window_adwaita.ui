@@ -42,6 +42,41 @@
                 <property name="label">title-widget!!!</property>
               </object>
             </property>
+            <child>
+              <object class="AdwViewSwitcher">
+                <property name="stack">
+                  <object class="AdwViewStack">
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="child">
+                          <object class="GtkBox">
+                            <property name="orientation">vertical</property>
+                            <child>
+                              <object class="GtkLabel" id="lbl_page1">
+                                <property name="label">Label Page1</property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                        <property name="name">invoice</property>
+                        <property name="title">Invoice</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="child">
+                          <object class="GtkLabel">
+                            <property name="label">Empty Page</property>
+                          </object>
+                        </property>
+                        <property name="name">report</property>
+                        <property name="title">Report</property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </child>
           </object>
         </child>
       </object>

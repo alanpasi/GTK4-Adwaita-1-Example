@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <!-- interface-name window_adwaita_v2.ui -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.7"/>
+  <object class="AdwApplicationWindow" id="main_window">
+    <property name="default-height">400</property>
+    <property name="default-width">600</property>
+    <child>
+      <object class="AdwToolbarView">
+        <property name="content">
+          <object class="AdwViewStack" id="view_stack">
+            <property name="margin-bottom">20</property>
+            <property name="margin-end">20</property>
+            <property name="margin-start">20</property>
+            <property name="margin-top">20</property>
+            <child>
+              <object class="AdwViewStackPage" id="page1">
+                <property name="child">
+                  <object class="GtkBox">
+                    <property name="homogeneous">True</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel" id="lbl_invoice_date">
+                        <property name="label">lbl_invoice_date</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_save_invoice">
+                        <property name="label">Save Invoice</property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="icon-name">accessories-text-editor-symbolic</property>
+                <property name="name">page1</property>
+                <property name="title">New Invoice</property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwViewStackPage" id="page2">
+                <property name="child">
+                  <object class="GtkBox">
+                    <property name="homogeneous">True</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">lbl_date</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">lbl_odometer</property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="icon-name">x-office-spreadsheet-symbolic</property>
+                <property name="name">page2</property>
+                <property name="title">Report</property>
+              </object>
+            </child>
+          </object>
+        </property>
+        <child type="top">
+          <object class="AdwHeaderBar" id="headerbar">
+            <property name="title-widget">
+              <object class="AdwWindowTitle" id="title-headerbar">
+                <property name="subtitle">Spin</property>
+                <property name="title">Refuel</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child type="bottom">
+          <object class="AdwViewSwitcher">
+            <property name="stack">view_stack</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

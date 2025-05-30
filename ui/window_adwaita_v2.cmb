@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<!-- Created with Cambalache 0.96.1 -->
+<cambalache-project version="0.96.0" target_tk="gtk-4.0">
+  <ui filename="window_adwaita_v2.ui" sha256="9a93c25ea1674b1abcb08851d97b2d140cd4528ecb82fa897d107c07fdb6b6f7"/>
+</cambalache-project>

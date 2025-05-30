@@ -1,9 +1,8 @@
 #include <adwaita.h>
 #include "app_window.h"
-#include "gtk/gtk.h"
 
 static void btn_click(GtkButton *button) {
-    g_print("Button click!!!\n");
+    g_print("Invoice saved!!!\n");
 };
 
 /* adw_application Callback Function */
@@ -13,7 +12,7 @@ static void activate_cb (GtkApplication *app) {
     GtkBuilder *builder;
 
     // builder = gtk_builder_new_from_file("ui/adwaita_window.ui");
-    builder = gtk_builder_new_from_file("ui/window_adwaita.ui");
+    builder = gtk_builder_new_from_file("ui/window_adwaita_v2.ui");
 
     // Widgets styles
     load_css();
@@ -31,11 +30,11 @@ static void activate_cb (GtkApplication *app) {
     // GtkLabel
     data->lbl_headerbar_title = GTK_WIDGET(gtk_builder_get_object(builder, "title-headerbar"));
     gtk_widget_set_name(data->lbl_headerbar_title, "title-headerbar");
-    gtk_label_set_label(GTK_LABEL(data->lbl_headerbar_title), "Adwaita Window Application Demo");
+    // gtk_label_set_label(GTK_LABEL(data->lbl_headerbar_title), "Adwaita Window Application Demo");
 
     // GtkButton
-    data->button = GTK_WIDGET(gtk_builder_get_object(builder, "button"));
-    gtk_widget_set_name(data->button, "button");
+    data->button = GTK_WIDGET(gtk_builder_get_object(builder, "btn_save_invoice"));
+    gtk_widget_set_name(data->button, "btn_save_invoice");
     g_signal_connect(data->button, "clicked", G_CALLBACK(btn_click), NULL);
 
     gtk_window_present (GTK_WINDOW (data->window));
